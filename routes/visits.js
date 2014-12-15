@@ -3,6 +3,10 @@ var router = express.Router();
 
 /* GET visits listing. */
 router.get('/', function(req, res) {
+  // FUGLY HACK: I'm doing this so as not to introduce an extra jwt dependency.
+  // Also FUGLY: using a single space (' ') instead of \s for the regex.
+  var token = req.headers.authorization.split(/Bearer /i)[1];
+  console.log('AUTH TOKEN', token);
   var visits = [
     { lat: 37.782551, lng: -122.445368 },
     { lat: 37.782745, lng: -122.444586 },
