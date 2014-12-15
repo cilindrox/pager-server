@@ -1,0 +1,15 @@
+{
+  "name": "pager-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.10.0",
+    "debug": "~2.1.0",
+    "express": "~4.10.6",
+    "morgan": "~1.5.0",
+    "serve-favicon": "^2.1.7"
+  }
+}
