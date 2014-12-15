@@ -1,5 +1,6 @@
 var express = require('express');
 var favicon = require('serve-favicon');
+var cors = require('cors');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
@@ -11,6 +12,10 @@ var app = express();
 
 app.use(favicon('./public/favicon.ico', { maxAge: 31556926 }));
 app.use(logger('dev'));
+
+// Reflect the request origin as defined by `req.header('Origin')`
+app.use(cors({ origin: true }));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
