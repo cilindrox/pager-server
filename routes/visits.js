@@ -8,17 +8,11 @@ var url = process.env.ENDPOINT_URL;
 /* GET visits listing. */
 router.get('/', function(req, res) {
   var token = parser.parse(req.headers);
-
-  // FIXME(gfestari):This call simply takes too long for promises to complete.
-  // visitsHelper.getVisits(url + '/visits', token, function(err, data) {
-  //   if (err) { return; }
-  //   res.json(data);
-  // });
-
-  visitsHelper.queryApi(url + '/visits', token, 1, function(data) {
-    res.json(data.body);
+  // FIXME(gfestari):This call simply takes too damn long
+  visitsHelper.getVisits(url + '/visits', token, function(err, data) {
+    if (err) { return; }
+    res.json({ visits: data });
   });
-
 });
 
 module.exports = router;
