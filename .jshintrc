@@ -69,5 +69,5 @@
   "maxcomplexity": 6,
   "maxlen": 80,
 
-  "predef": ["define", "requirejs"]
+  "predef": ["define", "requirejs", "describe", "it"]
 }
