@@ -14,6 +14,14 @@ This is intended to be used as a companion-app for [pager-client]
  4. ????
  5. PROFIT
 
+## Configuration
+
+This relies on the `ENDPOINT_URL` env var. Just remeber to:
+
+`export ENDPOINT_URL='https://your.api.url'`
+
+**before** runing the app.
+
 ## Overview
 
 This works as a wrapper for the pager API, serving the condensed (non-paginated) list of views available.
