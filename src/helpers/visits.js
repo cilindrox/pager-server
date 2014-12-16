@@ -53,4 +53,7 @@ var getVisits = function(url, token, cb) {
   });
 };
 
-module.exports = getVisits;
+module.exports = {
+  getVisits: getVisits,
+  queryApi: queryApi
+};
