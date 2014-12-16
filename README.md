@@ -1,6 +1,8 @@
 pager-server
 ============
 
+[![Build Status](https://travis-ci.org/gfestari/pager-server.svg)](https://travis-ci.org/gfestari/pager-server) [![Coverage Status](https://img.shields.io/coveralls/gfestari/pager-server.svg)](https://coveralls.io/r/gfestari/pager-server) [![Dependency Status](https://david-dm.org/gfestari/pager-server.svg?style=flat)](https://david-dm.org/gfestari/pager-server)
+
 A (barebones) API wrapper for pager-client.
 
 This is intended to be used as a companion-app for [pager-client]
