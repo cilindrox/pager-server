@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var helper = require('../src/helpers/visits');
+var visitsHelper = require('../src/helpers/visits');
+
+// TODO(gfestari): remove this
+var visits = require('../public/visits.json');
 
 var url = process.env.ENDPOINT_URL;
 
@@ -10,9 +13,13 @@ router.get('/', function(req, res) {
   // Also, using a single space (' ') instead of \s for the regex.
   var token = req.headers.authorization.split(/Bearer /i)[1];
 
-  helper(url + '/visits', token, function(data) {
-    res.json(data);
-  });
+  // FIXME(gfestari):This call simply takes too long for promises to complete.
+  // visitsHelper(url + '/visits', token, function(err, data) {
+  //   if (err) { return; }
+  //   res.json(data);
+  // });
+
+  res.json(visits);
 });
 
 module.exports = router;
